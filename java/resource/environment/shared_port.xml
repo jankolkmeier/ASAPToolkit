@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<SharedPortLoader id="sharedPort">
+  <BMLParser>
+    <BMLAttributeExtension class="asap.bml.ext.bmla.BMLABMLBehaviorAttributes"/>
+  </BMLParser>
+  <MultiAgentBMLScheduler>
+    <SchedulingHandler class="asap.realizer.scheduler.BMLASchedulingHandler" schedulingStrategy="asap.realizer.scheduler.SortedSmartBodySchedulingStrategy"/>
+  </MultiAgentBMLScheduler>
+  <!-- UDP pipe for receiving BML from / sending feedback to Unity via UDP port --> 
+  <PipeLoader id="pipe" loader="asap.middlewareadapters.loader.MiddlewareToBMLRealizerAdapterLoader">
+    <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+      <MiddlewareProperty name="port" value="6662"/>
+    </MiddlewareOptions>
+  </PipeLoader>
+  <!-- AMQ pipe for receiving BML from / sending feedback to ActiveMQ --> 
+  <PipeLoader id="pipe" loader="asap.activemqadapters.loader.ActiveMQToBMLRealizerAdapterLoader" >
+        <Properties 
+              bmlTopic="couch.bml.request.ASAP" 
+              feedbackTopic="couch.bml.feedback.ASAP" 
+              amqBrokerURI="tcp://localhost:61616"
+            />
+  </PipeLoader>
+</SharedPortLoader>

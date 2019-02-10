@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<SkeletonPose encoding="R" rotationEncoding="quaternions" parts="r_sternoclavicular r_shoulder r_elbow r_wrist l_sternoclavicular l_shoulder l_elbow l_wrist">
+  -0.993 0.0 0.0 -0.119 -0.833 0.076 -0.211 0.505 -0.607 0.784 -0.065 -0.112 -0.955 -0.004 -0.281 -0.097 -0.987 0.0 0.0 0.163 -0.887 0.398 0.079 -0.22 -0.774 0.322 -0.005 0.544 -0.74 0.014 0.592 0.318
+</SkeletonPose>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<configuration debug="true">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        LOLOLOL [%thread] %-5level %logger{36} - %msg%n
+     </pattern>
+    </encoder>
+  </appender>
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+  <logger name="eu.couch.hmi" level="WARN"/>
+  <logger name="eu.couch.hmi.flipper.IntentToBMLTranslator" level="DEBUG"/>
+  <logger name="eu.couch.hmi.flipper.IntentToFMLTranslator" level="WARN"/>
+  <logger name="eu.couch.hmi.flipper.GretaFeedbackWatcher" level="WARN"/>
+  <logger name="eu.couch.hmi.flipper.BmlFeedbackWatcher" level="WARN"/>
+  <logger name="eu.couch.hmi.flipper.AsapPredictionEavesdropper" level="WARN"/>
+  <logger name="hmi.unityembodiments" level="INFO"/>
+  <logger name="asap.environment" level="INFO"/>
+  <logger name="nl.utwente" level="INFO"/>
+  <logger name="nl.utwente.hmi.middleware" level="WARN"/>
+  <logger name="asap.middlewareengine" level="WARN"/>
+</configuration>

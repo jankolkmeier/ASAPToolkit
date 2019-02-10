@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<SkeletonPose encoding="T1R" rotationEncoding="quaternions" parts="HumanoidRoot vl5 vt10 vt6 vc4 r_sternoclavicular r_shoulder r_elbow r_wrist l_sternoclavicular l_shoulder l_elbow l_wrist l_hip l_knee l_ankle r_hip r_knee r_ankle">
+     -0.616 0.443 -0.761 -0.928 0.0 -0.371 0.0 -1.0 0.0 0.0 0.0 -0.973 -0.232 0.0 0.0 0.995 -0.033 -0.094 -0.003 -0.986 0.168 0.0 0.0 -0.983 0.0 0.0 -0.184 -0.73 0.318 -0.298 0.526 -0.913 0.352 -0.196 0.061 0.984 0.008 0.046 -0.172 -0.966 0.0 0.0 0.259 -0.84 0.379 0.181 -0.343 -0.649 0.542 0.407 0.346 0.891 -0.005 -0.452 0.049 -0.722 0.677 0.131 0.051 -0.795 -0.569 -0.119 0.172 0.973 0.053 -0.14 0.176 -0.76 0.597 0.155 0.207 -0.933 -0.354 0.027 -0.061 -0.972 -0.205 -0.115 -0.011
+</SkeletonPose>
+   

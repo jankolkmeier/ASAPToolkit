@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<AsapVirtualHuman id="UMA">
+  <Loader id="realizer" loader="asap.realizerembodiments.MultiAgentAsapRealizerEmbodiment">
+    <SharedPort id="sharedPort"/>
+  </Loader>
+  <!-- 
+  <Loader id="eyelidmorpher" loader="hmi.faceembodiments.loader.EyelidMorpherLoader">
+    <Morphs ids="FACS_AU_45" weight="1.0"/>
+  </Loader>
+   -->
+  <Loader id="unityembodiment" loader="hmi.unityembodiments.loader.UnityEmbodimentLoader">
+    <SharedMiddleware id="sharedMiddleware"/>
+  </Loader>
+  <Loader id="mixedskeletonembodiment" loader="hmi.physicsenvironment.MixedSkeletonEmbodimentLoader" requiredloaders="unityembodiment"/>
+  
+  <Loader id="physicalembodiment" loader="hmi.physicsenvironment.OdePhysicalEmbodiment" requiredloaders="mixedskeletonembodiment">
+  </Loader>
+  
+  <Loader id="animationengine" loader="asap.animationengine.loader.MixedAnimationEngineLoader" requiredloaders="mixedskeletonembodiment,physicalembodiment">
+    <GestureBinding basedir="" resources="bindings/gesture/" filename="gesturebinding_uma.xml"/>
+    <StartPose>
+      <RestPose type="SkeletonPose" file="behaviors/uma/restposes/new.xml"/>
+    </StartPose>
+    <Hns resources="Humanoids/armandia/hns" filename="hns_armandia.xml"/>
+    <HnsHandShape dir="Humanoids/shared/handshapes"/>
+  </Loader>
+  <Loader id="faceengine" loader="asap.faceengine.loader.FaceEngineLoader" requiredloaders="unityembodiment">
+    <FaceBinding basedir="" resources="bindings/face/" filename="facebinding_uma.xml" facs2morphmappingresources="bindings/facs2morph/" facs2morphmappingfilename="facs2morphmapping.xml"/>
+  </Loader>
+  <Loader id="facelipsync" requiredloaders="faceengine" loader="asap.faceengine.loader.TimedFaceUnitLipSynchProviderLoader">
+    <MorphVisemeBinding resources="bindings/viseme2morph/" filename="visemebinding_disney.xml"/>
+  </Loader>
+  
+  
+  <Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
+    <PhonemeToVisemeMapping resources="bindings/phoneme2viseme/" filename="sampaen2disney.xml"/>
+  </Loader>
+  <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
+    <Voice factory="WAV_TTS" voicename="dfki-prudence"/>
+  </Loader>
+  
+    
+  <!--
+<Loader id="ttsbinding" loader="asap.sapittsbinding.loader.SapiTTSBindingLoader">
+</Loader>
+<Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
+  <Voice factory="WAV_TTS" voicename="Microsoft Mark" />
+</Loader>
+  -->
+
+
+<!--
+  <Loader id="breathingengine" loader="asap.emitterengine.loader.EmitterEngineLoader">
+    <EmitterInfo class="asap.breathingemitter.BreathingEmitterInfo"/>
+  </Loader>
+  <Loader id="blinkengine" loader="asap.emitterengine.loader.EmitterEngineLoader">
+    <EmitterInfo class="asap.blinkemitter.BlinkEmitterInfo"/>
+  </Loader>
+  <Loader id="middlewareembodiment" loader="asap.middlewareengine.embodiment.MiddlewareEmbodiment" requiredloaders="">
+    <MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.activemq.ActiveMQMiddlewareLoader">
+    </MiddlewareOptions>
+  </Loader>
+  <Loader id="middlewareengine" loader="asap.middlewareengine.engine.MiddlewareEngineLoader" requiredloaders="middlewareembodiment">
+    <MiddlewareBinding basedir="" resources="" filename="bindings/middleware/middlewarebinding.xml"/>
+  </Loader>
+  -->
+</AsapVirtualHuman>
