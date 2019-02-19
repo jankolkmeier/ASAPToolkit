@@ -27,7 +27,9 @@
     <dependency org="HMI" name="HmiPhysics" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiPhysicsEnvironment" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiPhysicsEmbodiments" rev="latest.${resolve.status}"/>
+    <!--
     <dependency org="Asap" name="AsapAnimationEngine" rev="latest.${resolve.status}"/>
+    -->
     <dependency org="HMI" name="HmiMiddlewareAbstractionLayer" rev="latest.${resolve.status}"/>
     <dependency org="HMI" name="HmiUnityEmbodiments" rev="latest.${resolve.status}"/>
     <!-- // 
