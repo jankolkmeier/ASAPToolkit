@@ -30,21 +30,21 @@
   </Loader>
   
   
-  <!--
   <Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
     <PhonemeToVisemeMapping resources="bindings/phoneme2viseme/" filename="sampaen2disney.xml"/>
   </Loader>
   <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
     <Voice factory="WAV_TTS" voicename="dfki-prudence"/>
   </Loader>
-  -->
   
     
+  <!--
 <Loader id="ttsbinding" loader="asap.sapittsbinding.loader.SapiTTSBindingLoader">
 </Loader>
 <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
   <Voice factory="WAV_TTS" voicename="Microsoft Hazel Desktop" />
 </Loader>
+  -->
 
 
 <!--

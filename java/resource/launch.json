@@ -1,8 +1,6 @@
 {
 	"instance": "ASAP BORG",
 	"agents": [
-		{ "charId": "COUCH_M_1", "spec": "agentspecs/UMA_M_1.xml" },
-		{ "charId": "COUCH_F_1", "spec": "agentspecs/UMA_F_1.xml" },
-		{ "charId": "COUCH_M_2", "spec": "agentspecs/UMA_M_2.xml" }
+		{ "charId": "UMA", "spec": "agentspecs/UMA_F_1.xml" }
 	]
 }
