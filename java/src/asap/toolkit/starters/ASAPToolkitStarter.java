@@ -1,8 +1,14 @@
 package asap.toolkit.starters;
 
 import nl.utwente.hmi.middleware.loader.GenericMiddlewareLoader;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import asap.bml.ext.bmlt.BMLTInfo;
 import asap.environment.AsapEnvironment;
 import asap.realizerembodiments.SharedPortLoader;
@@ -18,22 +24,38 @@ import saiba.bml.core.FaceLexemeBehaviour;
 import saiba.bml.core.HeadBehaviour;
 import saiba.bml.core.PostureShiftBehaviour;
 
-public class AsapBorgStarter {
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+public class ASAPToolkitStarter {
+
+	public static String ReadFile(String path) {
+        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+        InputStream is = classloader.getResourceAsStream(path);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+    		return br.lines().collect(Collectors.joining(System.lineSeparator()));
+    	} catch (IOException e) {
+			return null;
+		}
+	}
+	
     public static void main(String[] args) throws IOException {
-        AsapBorgStarter cds = new AsapBorgStarter();
-        cds.init();
+        ASAPToolkitStarter asapToolkit = new ASAPToolkitStarter();
+    	String launch = ReadFile("launch.json");
+    	if (launch != null) {
+    		ObjectMapper mapper = new ObjectMapper();
+    		asapToolkit.init(mapper.readTree(launch));
+    	} else {
+    		asapToolkit.init(null);
+    	}
     }
 
-    public AsapBorgStarter() {
+    public ASAPToolkitStarter() {
     }
 
-    public void init() throws IOException {
+    public void init(JsonNode jsonNode) throws IOException {
         String shared_port = "environment/shared_port.xml";
         String shared_middleware = "environment/shared_middleware.xml";
-        String[] specs = new String[] {
-        		"agentspecs/UMA.xml"
-        };
         String resources = "";
         
         MixedAnimationEnvironment mae = new MixedAnimationEnvironment();
@@ -75,11 +97,31 @@ public class AsapBorgStarter {
         ee.init(environments, spl.getSchedulingClock());
         ope.addPrePhysicsCopyListener(ee);
         
-        for (String spec : specs) {
-            ee.loadVirtualHuman(resources, spec, "AsapRealizer: "+spec);
+        JsonNode agents = jsonNode.get("agents");
+        try {
+        	for (JsonNode agent : agents) {
+        		String title = String.format("%s: %s", jsonNode.get("instance").asText(), agent.get("charId").asText());
+                ee.loadVirtualHuman(agent.get("charId").asText(), resources, agent.get("spec").asText(), title);
+        		
+        	}
+            ope.startPhysicsClock();
+        } catch (Exception e) {
+        	System.out.println("Failed to load agents: "+e);
         }
-
-        ope.startPhysicsClock();
     }
+    
+    /*  
+import com.github.jknack.handlebars.*;
+        Handlebars handlebars = new Handlebars();
+
+    	String templateFile = jsonNode.get("template").asText();
+    	Template template = handlebars.compile(templateFile);
+    	Context context = Context
+    			  .newBuilder(jsonNode)
+    			  .resolver(JsonNodeValueResolver.INSTANCE)
+    			  .build();
+    	
+    	System.out.println(template.apply(context));
+    */
 }
 
