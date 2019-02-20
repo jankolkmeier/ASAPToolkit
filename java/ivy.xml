@@ -11,7 +11,7 @@
     <!--dependency org="Asap" name="AsapRealizer" rev="latest.${resolve.status}"/-->
     <dependency org="Asap" name="AsapEnvironment" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapAudioEngine" rev="latest.${resolve.status}"/>
-    <dependency org="Asap" name="AsapEmitterEngine" rev="latest.${resolve.status}"/>
+    <!-- dependency org="Asap" name="AsapEmitterEngine" rev="latest.${resolve.status}"/ -->
     <dependency org="Asap" name="AsapLiveMocapEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapPictureEngine" rev="latest.${resolve.status}"/>
     <dependency org="Asap" name="AsapSpeechEngine" rev="latest.${resolve.status}"/>
