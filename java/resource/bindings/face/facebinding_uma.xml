@@ -13,7 +13,7 @@
     </parameterdefaults>
     <FaceUnit type="Morph"/>
   </FaceUnitSpec>
-  <!-- 
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="BLINK"/>
@@ -27,6 +27,7 @@
     </parameterdefaults>
     <FaceUnit type="Morph"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="smilemouth"/>
@@ -40,6 +41,8 @@
     </parameterdefaults>
     <FaceUnit type="Morph"/>
   </FaceUnitSpec>
+  <!--
+  
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="anger"/>
@@ -53,6 +56,7 @@
     </parameterdefaults>
     <FaceUnit type="Morph"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceFacs" namespace="http://www.bml-initiative.org/bml/coreextensions-1.0">
     <constraints>
 		</constraints>
@@ -65,6 +69,7 @@
 		</parameterdefaults>
     <FaceUnit type="AU2Morph" facs2morphmappingresources="bindings/" facs2morphmappingfilename="facs2morphmapping.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="think"/>
@@ -77,6 +82,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/think.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="ask"/>
@@ -89,6 +95,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/ask.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="expectingbrows"/>
@@ -101,6 +108,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/expectingbrows.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="questioning"/>
@@ -113,6 +121,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/questioning.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="sip"/>
@@ -125,6 +134,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/sip.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="smile"/>
@@ -137,6 +147,7 @@
     </parameterdefaults>
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/smile.xml"/>
   </FaceUnitSpec>
+
   <FaceUnitSpec type="faceLexeme">
     <constraints>
       <constraint name="lexeme" value="smileeyes"/>
@@ -150,8 +161,7 @@
     <FaceUnit type="FACS2Morph" filename="behaviors/shared/faceexpressions/smileeyes.xml"/>
   </FaceUnitSpec>
   
-   -->
-  
+  -->
   <!--
   <FaceUnitSpec type="faceLexeme">
     <constraints>
