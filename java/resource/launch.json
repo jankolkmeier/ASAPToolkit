@@ -1,6 +1,6 @@
 {
-	"instance": "ASAP BORG",
+	"instance": "ASAP Example",
 	"agents": [
-		{ "charId": "UMA", "spec": "agentspecs/UMA_F_1.xml" }
+		{ "charId": "BlueGuy", "spec": "agentspecs/BlueGuy.xml" }
 	]
 }
