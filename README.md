@@ -1,5 +1,7 @@
 # ASAPToolkit
 
+This is a minimal starter project to quickly setup a minimal unity virtual human driven by ASAP.
+This is to be used in conjuction with the unity toolkit [ASAPToolkitUnity](https://github.com/ArticulatedSocialAgentsPlatform/ASAPToolkitUnity)
 
 ## Requirements
 
@@ -32,7 +34,8 @@ compile:
 ```ant build```
 
 
-Once you have the [asap unity scene](https://github.com/ArticulatedSocialAgentsPlatform/ASAPToolkitUnity) setup, you can start asap by running: 
+Create a new unity project and copy the [ASAPToolkitUnity](https://github.com/ArticulatedSocialAgentsPlatform/ASAPToolkitUnity/) assets (Note that it requires to also install the [UMA 2 assets from the Assetstore](https://assetstore.unity.com/packages/3d/characters/uma-2-unity-multipurpose-avatar-35611). 
+Open the scene ```ASAPToolkitUnity/ExampleScenes/BlueGuy.unity```
 
 ```ant run```
 
