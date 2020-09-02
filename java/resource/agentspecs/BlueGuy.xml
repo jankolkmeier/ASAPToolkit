@@ -43,7 +43,6 @@
 <Loader id="ttsbinding" loader="asap.sapittsbinding.loader.SapiTTSBindingLoader">
 </Loader>
 <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
-  <PhonemeToVisemeMapping resources="bindings/phoneme2viseme/" filename="sampaen2disney.xml"/>
   <Voice factory="WAV_TTS" voicename="Microsoft Mark" />
 </Loader>
 
