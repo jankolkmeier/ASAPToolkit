@@ -4,9 +4,9 @@
 ## Requirements
 
 - Have java/jdk 1.8 installed and JAVA_HOME environment variable configured correctly (i.e. ```C:\Program Files\Java\jdk1.8.0_261``` on windows)
-- [Apache Ant](https://ant.apache.org/) in path
+- [Apache Ant](https://ant.apache.org/) in path. (newer versions might also work).
 - Python 2.7 in path / as the default python (sorry)
-- Have an activemq broker running (on default port: 61616). ActiveMQ Classic and Artemis both work. Tested with the default broker (anonymous login enabled)  & service setup[described here](http://activemq.apache.org/components/artemis/documentation/1.0.0/running-server.html)
+- Have an activemq broker running (on default port: 61616). ActiveMQ Classic and Artemis both work. Tested with the default broker (anonymous login enabled!)  & service setup[described here](http://activemq.apache.org/components/artemis/documentation/1.0.0/running-server.html)
 
 ## Setup
 
