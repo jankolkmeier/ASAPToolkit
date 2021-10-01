@@ -12,7 +12,7 @@
       <MiddlewareProperty name="port" value="6662"/>
     </MiddlewareOptions>
   </PipeLoader>
-  <!-- AMQ pipe for receiving BML from / sending feedback to ActiveMQ --> 
+  <!-- AMQ pipe for receiving BML from / sending feedback to ActiveMQ
   <PipeLoader id="pipe" loader="asap.activemqadapters.loader.ActiveMQToBMLRealizerAdapterLoader" >
         <Properties 
               bmlTopic="couch.bml.request.ASAP" 
@@ -20,4 +20,5 @@
               amqBrokerURI="tcp://localhost:61616"
             />
   </PipeLoader>
+   --> 
 </SharedPortLoader>

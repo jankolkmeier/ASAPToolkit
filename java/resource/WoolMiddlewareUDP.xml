@@ -1,0 +1,3 @@
+<MiddlewareOptions loaderclass="nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader">
+  <MiddlewareProperty name="port" value="4420"/>
+</MiddlewareOptions>

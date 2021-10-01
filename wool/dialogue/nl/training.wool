@@ -1,0 +1,125 @@
+title: Start
+tags: 
+speaker: LiquiAgent
+colorID: 1
+position: 367,254
+---
+<<action type="generic" value="gaze" object="user" start="1" >>
+
+Hee, leuk dat je daar bent! We zijn net begonnen voetbal te kijken. Hoe is het met je?
+
+[[Prima hoor, en met jou?|Node2|<<action type="generic" value="buttonctrl" color_after="#ff0000">>]]
+[[Nou gewoon, en met jou?|Node2|<<action type="generic" value="buttonctrl" color_after="#ff0000">>]]
+
+
+===
+title: Node2
+tags: 
+speaker: LiquiAgent
+colorID: 8
+position: 701,250
+---
+<<action type="generic" value="gaze" object="user" start="1" >>
+<<action type="generic" value="gesture" gesture="thumbsup" start="5" duration="2" >>
+
+Goed om te horen, joh! Het gaat goed. Hier, pak maar een biertje. Vanavond maken we er een mooie avond van.
+
+
+[[Nee man, ik ben gestopt. Doe me maar een cola.|Node3]]
+[[Nee, ik doe het even rustig aan.|Node3]]
+[[Ja, eentje kan misschien wel.|Node4]]
+
+
+===
+title: Node3
+tags: 
+speaker: LiquiAgent
+colorID: 1
+position: 1092,112
+---
+Wat doe je nou moeilijk watje. Dat doe je toch altijd.
+
+
+[[Nee man, ik ben gestopt. |Node5]]
+[[Later misschien.|Node6]]
+[[Ach, wat maakt het ook uit. Doe maar.|Node7]]
+
+
+===
+title: Node4
+tags: 
+speaker: LiquiAgent
+colorID: 1
+position: 1095,378
+---
+Daar knap je vast van op, je ziet er moe uit.
+
+
+[[Nee, ik wil vandaag niet drinken. |Node5]]
+[[Ik heb geen dorst.|Node6]]
+[[Nou inderdaad, eentje moet kunnen.|Node7]]
+===
+
+title: Node5
+tags: 
+speaker: LiquiAgent
+colorID: 2
+position: 1457,12
+---
+Wat doe je hier dan als je toch niet drinkt? Vroeger was je veel gezelliger.
+
+
+[[Ik voel me beter zonder alcohol.|Node8]]
+[[Vanavond drink ik niet.|Node8]]
+[[Okay, vanavond is de laatste keer.|Node9]]
+
+===
+title: Node6
+tags: 
+speaker: LiquiAgent
+colorID: 2
+position: 1459,268
+---
+Hoezo?
+
+
+[[Ik voel me beter zonder alcohol.|Node8]]
+[[Vanavond drink ik niet.|Node8]]
+[[Okay, vanavond is de laatste keer.|Node9]]
+
+
+===
+title: Node7
+tags: 
+speaker: LiquiAgent
+colorID: 2
+position: 1459,525
+---
+Dan pak er maar eentje!
+
+
+[[Liever niet. Ik voel me toch beter zonder alcohol.|Node8]]
+[[Liever niet. Ik moet morgen vroeg op.|Node8]]
+[[Ja lekker. Vanavond is de laatste keer.|Node9]]
+
+
+===
+title: Node8
+tags: 
+speaker: LiquiAgent
+colorID: 3
+position: 1804,120
+---
+Okay, moet jij weten.
+
+
+===
+title: Node9
+tags: 
+speaker: LiquiAgent
+colorID: 3
+position: 1805,411
+---
+Gezellig. Nou party!
+===
+

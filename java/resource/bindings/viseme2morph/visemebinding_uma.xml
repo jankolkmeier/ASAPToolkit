@@ -1,0 +1,24 @@
+<VisemeToMorphMapping>
+  <Mapping viseme="0" intensity="0" target="VisemeNone"/>
+  <Mapping viseme="1" target="VisemeAH"/>
+  <Mapping viseme="2" target="VisemeAA"/>
+  <Mapping viseme="3" target="VisemeOH"/>
+  <Mapping viseme="4" target="VisemeEH"/>
+  <Mapping viseme="5" target="VisemeER"/>
+  <Mapping viseme="6" target="VisemeEE"/>
+  <Mapping viseme="7" target="VisemeJJ"/>
+  <Mapping viseme="8" target="VisemeOH"/>
+  <Mapping viseme="9" target="VisemeAW"/>
+  <Mapping viseme="10" target="VisemeOH"/>
+  <Mapping viseme="11" target="VisemeEE"/>
+  <Mapping viseme="12" target="VisemeOH"/>
+  <Mapping viseme="13" target="VisemeCDG"/>
+  <Mapping viseme="14" target="VisemeLL"/>
+  <Mapping viseme="15" target="VisemeEE"/>
+  <Mapping viseme="16" target="VisemeTH"/>
+  <Mapping viseme="17" target="VisemeTH"/>
+  <Mapping viseme="18" target="VisemeTH"/>
+  <Mapping viseme="19" target="VisemeLL"/>
+  <Mapping viseme="20" target="VisemeEE"/>
+  <Mapping viseme="21" target="VisemeBMP"/>
+</VisemeToMorphMapping>

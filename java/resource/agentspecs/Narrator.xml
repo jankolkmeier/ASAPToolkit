@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<AsapVirtualHuman id="UMA">
+  <Loader id="realizer" loader="asap.realizerembodiments.MultiAgentAsapRealizerEmbodiment">
+    <SharedPort id="sharedPort"/>
+  </Loader>
+  
+  <Loader id="unityembodiment" loader="hmi.unityembodiments.loader.UnityEmbodimentLoader">
+    <SharedMiddleware id="sharedMiddleware"/>
+  </Loader>
+
+<!--
+  <Loader id="faceengine" loader="asap.faceengine.loader.FaceEngineLoader" requiredloaders="unityembodiment">
+    <FaceBinding basedir="" resources="bindings/face/" filename="facebinding_uma.xml" facs2morphmappingresources="bindings/facs2morph/" facs2morphmappingfilename="facs2morphmapping.xml"/>
+  </Loader>
+  <Loader id="facelipsync" requiredloaders="faceengine" loader="asap.faceengine.loader.TimedFaceUnitLipSynchProviderLoader">
+    <MorphVisemeBinding resources="bindings/viseme2morph/" filename="visemebinding_uma.xml"/>
+  </Loader>
+-->
+  <Loader id="ttsbinding" loader="asap.sapittsbinding.loader.SapiTTSBindingLoader">
+  </Loader>
+  <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="ttsbinding">
+    <Voice factory="WAV_TTS" voicename="Microsoft Bart" />
+  </Loader>
+</AsapVirtualHuman>

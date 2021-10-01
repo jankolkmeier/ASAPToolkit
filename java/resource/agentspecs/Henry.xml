@@ -1,5 +1,5 @@
-s<?xml version="1.0"?>
-<AsapVirtualHuman id="BlueGuy">
+<?xml version="1.0"?>
+<AsapVirtualHuman id="Henry">
   <Loader id="realizer" loader="asap.realizerembodiments.MultiAgentAsapRealizerEmbodiment">
     <SharedPort id="sharedPort"/>
   </Loader>
@@ -43,7 +43,8 @@ s<?xml version="1.0"?>
 <Loader id="ttsbinding" loader="asap.sapittsbinding.loader.SapiTTSBindingLoader">
 </Loader>
 <Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
-  <Voice factory="WAV_TTS" voicename="Microsoft Mark" />
+  <Voice factory="WAV_TTS" voicename="Microsoft Frank" />
+  <!--Microsoft Mark-->
 </Loader>
 
 

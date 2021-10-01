@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: main
+       
+Name: ASAPToolkit
+Specification-Title:    ASAPToolkit
+Specification-Version:  0.1
+Specification-Vendor:   HMI
+Implementation-Title:   ASAPToolkit
+Implementation-Version: September 29 2021  06:07 PM
+Implementation-Vendor:  HMI

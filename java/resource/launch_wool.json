@@ -1,0 +1,12 @@
+{
+	"instance": "LiquiAgent Test",
+	"agents": [
+		{ "charId": "LiquiAgent", "spec": "agentspecs/UMALipSyncOnly.xml" },
+		{ "charId": "Narrator", "spec": "agentspecs/Narrator.xml" }
+	],
+	"wool": {
+		"dialogueRoot": "../wool/dialogue",
+		"dataStore": "../wool/store",
+		"middlewareSpec": "WoolMiddlewareUDP.xml"
+	}
+}

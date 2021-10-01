@@ -1,5 +1,6 @@
 package asap.toolkit.starters;
 
+import nl.utwente.hmi.middleware.Middleware;
 import nl.utwente.hmi.middleware.loader.GenericMiddlewareLoader;
 
 import java.io.BufferedReader;
@@ -7,12 +8,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 import asap.bml.ext.bmlt.BMLTInfo;
 import asap.environment.AsapEnvironment;
 import asap.realizerembodiments.SharedPortLoader;
 import hmi.audioenvironment.AudioEnvironment;
+import hmi.audioenvironment.middleware.MiddlewareStreamingSoundManager;
 import hmi.environmentbase.ClockDrivenCopyEnvironment;
 import hmi.environmentbase.Environment;
 import hmi.mixedanimationenvironment.MixedAnimationEnvironment;
@@ -41,7 +44,7 @@ public class ASAPToolkitStarter {
 	
     public static void main(String[] args) throws IOException {
         ASAPToolkitStarter asapToolkit = new ASAPToolkitStarter();
-    	String launch = ReadFile("launch.json");
+    	String launch = ReadFile(args[0]);
     	if (launch != null) {
     		ObjectMapper mapper = new ObjectMapper();
     		asapToolkit.init(mapper.readTree(launch));
@@ -57,11 +60,18 @@ public class ASAPToolkitStarter {
         String shared_port = "environment/shared_port.xml";
         String shared_middleware = "environment/shared_middleware.xml";
         String resources = "";
-        
+    	String audioPort = "6669";
+    	String loaderClass = "nl.utwente.hmi.middleware.udp.UDPMultiClientMiddlewareLoader";
+    	Properties loaderProperties = new Properties();
+    	loaderProperties.put("port", audioPort);
+    	GenericMiddlewareLoader gml = new GenericMiddlewareLoader(loaderClass, loaderProperties);
+    	Middleware audioMiddleware = gml.load();
+        MiddlewareStreamingSoundManager mssm = new MiddlewareStreamingSoundManager(audioMiddleware);
+
         MixedAnimationEnvironment mae = new MixedAnimationEnvironment();
         final OdePhysicsEnvironment ope = new OdePhysicsEnvironment();
         WorldObjectEnvironment we = new WorldObjectEnvironment();
-        AudioEnvironment aue = new AudioEnvironment("LJWGL_JOAL");
+        AudioEnvironment aue = new AudioEnvironment();
 
         BMLTInfo.init();
         BMLInfo.addCustomFloatAttribute(FaceLexemeBehaviour.class, "http://asap-project.org/convanim", "repetition");
@@ -77,7 +87,7 @@ public class ASAPToolkitStarter {
         ope.init();
         mae.init(ope, 0.002f);
         we.init();
-        aue.init();
+        aue.init(mssm);
         environments.add(ee);
         environments.add(ope);
         environments.add(mae);
@@ -109,19 +119,5 @@ public class ASAPToolkitStarter {
         	System.out.println("Failed to load agents: "+e);
         }
     }
-    
-    /*  
-import com.github.jknack.handlebars.*;
-        Handlebars handlebars = new Handlebars();
-
-    	String templateFile = jsonNode.get("template").asText();
-    	Template template = handlebars.compile(templateFile);
-    	Context context = Context
-    			  .newBuilder(jsonNode)
-    			  .resolver(JsonNodeValueResolver.INSTANCE)
-    			  .build();
-    	
-    	System.out.println(template.apply(context));
-    */
 }
 

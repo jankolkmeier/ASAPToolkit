@@ -21,4 +21,10 @@
   <logger name="nl.utwente" level="INFO"/>
   <logger name="nl.utwente.hmi.middleware" level="WARN"/>
   <logger name="asap.middlewareengine" level="WARN"/>
+  <logger name="hmi.audioenvironment" level="WARN"/>
+  <logger name="asap.audioengine" level="WARN"/>
+  <logger name="asap.speechengine" level="WARN"/>
+  <logger name="hmi.tts" level="WARN"/>
+  <logger name="asap.sapittsbinding" level="WARN"/>
+  <logger name="eu.woolplatform" level="DEBUG"/>
 </configuration>
